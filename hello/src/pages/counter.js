@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "@/styles/Counter.module.css";
+import styles from "@/styles/Counter.module.css"; /* @는 절대경로 */
 
 export default function Counter() {
   const [count, setCount] = useState(0);
@@ -8,7 +8,8 @@ export default function Counter() {
     <div>
       <h1>
         Count: {/* count 가 0보다 작으면 minus 클래스를 적용한다. */}
-        {count < 0 ? <span className={styles.minus}>{count}</span> : count}
+        {count < 0 ? <span className={styles.minus}>{count}</span> : count}{" "}
+        {/* { A ? B : C } */}
       </h1>
       <button onClick={() => setCount(count + 1)}>Increase</button>
       <button onClick={() => setCount(count - 1)}>Decrease</button>
